@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <Sdk Name="Microsoft.Build.CentralPackageVersions" Version="2.1.3"/>
+    <Sdk Name="Microsoft.Build.CentralPackageVersions" Version="2.1.3" />
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk"/>
-        <PackageReference Include="xunit"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="xunit" />
         <PackageReference Include="xunit.runner.visualstudio">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,15 +18,15 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory"/>
-        <PackageReference Include="Newtonsoft.Json"/>
-        <PackageReference Include="Ardalis.HttpClientTestExtensions"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
+        <PackageReference Include="Newtonsoft.Json" />
+        <PackageReference Include="Ardalis.HttpClientTestExtensions" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\CleanArchitectureArchUnit.Web\CleanArchitectureArchUnit.Web.csproj"/>
-        <ProjectReference Include="..\CleanArchitectureArchUnit.UnitTests\CleanArchitectureArchUnit.UnitTests.csproj"/>
+        <ProjectReference Include="..\..\src\CleanArchitectureArchUnit.Web\CleanArchitectureArchUnit.Web.csproj" />
+        <ProjectReference Include="..\CleanArchitectureArchUnit.UnitTests\CleanArchitectureArchUnit.UnitTests.csproj" />
     </ItemGroup>
 
 </Project>
