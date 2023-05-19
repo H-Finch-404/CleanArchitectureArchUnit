@@ -1,10 +1,7 @@
 ﻿using Ardalis.ListStartupServices;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using CleanArchitectureArchUnit.Core;
-using CleanArchitectureArchUnit.Infrastructure;
-using CleanArchitectureArchUnit.Infrastructure.Data;
-using CleanArchitectureArchUnit.Web;
+using CleanArchitectureArchUnit.Bootstrapper;
 using FastEndpoints;
 using FastEndpoints.Swagger.Swashbuckle;
 using FastEndpoints.ApiExplorer;
@@ -23,11 +20,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
   options.MinimumSameSitePolicy = SameSiteMode.None;
 });
 
-string? connectionString = builder.Configuration.GetConnectionString("SqliteConnection");  //Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext(connectionString!);
-
-builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 builder.Services.AddFastEndpoints();
 builder.Services.AddFastEndpointsApiExplorer();
@@ -50,8 +43,7 @@ builder.Services.Configure<ServiceConfig>(config =>
 
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
-  containerBuilder.RegisterModule(new DefaultCoreModule());
-  containerBuilder.RegisterModule(new DefaultInfrastructureModule(builder.Environment.EnvironmentName == "Development"));
+  ModuleDependencyConfigurator.Configure(containerBuilder,builder.Configuration);
 });
 
 //builder.Logging.AddAzureWebAppDiagnostics(); add this if deploying to Azure
@@ -84,24 +76,6 @@ app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1")
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
 
-// Seed Database
-using (var scope = app.Services.CreateScope())
-{
-  var services = scope.ServiceProvider;
-
-  try
-  {
-    var context = services.GetRequiredService<AppDbContext>();
-    //                    context.Database.Migrate();
-    context.Database.EnsureCreated();
-    SeedData.Initialize(services);
-  }
-  catch (Exception ex)
-  {
-    var logger = services.GetRequiredService<ILogger<Program>>();
-    logger.LogError(ex, "An error occurred seeding the DB. {exceptionMessage}", ex.Message);
-  }
-}
 
 app.Run();
 

@@ -14,6 +14,7 @@
         <PackageReference Include="Ardalis.ListStartupServices" />
         <PackageReference Include="Ardalis.Result" />
         <PackageReference Include="Ardalis.Result.AspNetCore" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" />
         <PackageReference Include="FastEndpoints" />
         <PackageReference Include="FastEndpoints.ApiExplorer" />
         <PackageReference Include="FastEndpoints.Swagger.Swashbuckle" />
@@ -28,21 +29,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\CleanArchitectureArchUnit.Infrastructure\CleanArchitectureArchUnit.Infrastructure.csproj" />
+      <ProjectReference Include="..\CleanArchitectureArchUnit.Bootstrapper\CleanArchitectureArchUnit.Bootstrapper.csproj" />
+      <ProjectReference Include="..\CleanArchitectureArchUnit.Core\CleanArchitectureArchUnit.Core.csproj" />
+      <ProjectReference Include="..\CleanArchitectureArchUnit.SharedKernel\CleanArchitectureArchUnit.SharedKernel.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\ProjectDetails\Incomplete.cshtml" />
-      <_ContentIncludedByDefault Remove="Pages\ProjectDetails\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
-      <_ContentIncludedByDefault Remove="Pages\_ViewStart.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Project\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
-    </ItemGroup>
-
 </Project>

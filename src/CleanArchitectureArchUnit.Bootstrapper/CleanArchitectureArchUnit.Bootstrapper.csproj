@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" />
+      <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CleanArchitectureArchUnit.Core\CleanArchitectureArchUnit.Core.csproj" />
+      <ProjectReference Include="..\CleanArchitectureArchUnit.Infrastructure\CleanArchitectureArchUnit.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

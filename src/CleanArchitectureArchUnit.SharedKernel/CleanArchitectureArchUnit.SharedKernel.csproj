@@ -6,8 +6,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ardalis.Specification"/>
-        <PackageReference Include="MediatR"/>
+        <PackageReference Include="Ardalis.Specification" />
+        <PackageReference Include="Autofac" />
+        <PackageReference Include="MediatR" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
     </ItemGroup>
 
 </Project>

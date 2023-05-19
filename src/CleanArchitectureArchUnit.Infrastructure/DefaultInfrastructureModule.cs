@@ -7,58 +7,27 @@ using CleanArchitectureArchUnit.SharedKernel;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 using MediatR;
 using MediatR.Pipeline;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Module = Autofac.Module;
 
 namespace CleanArchitectureArchUnit.Infrastructure;
 
-public class DefaultInfrastructureModule : Module
+public class DefaultInfrastructureModule : ProjectModule
 {
-  private readonly bool _isDevelopment = false;
   private readonly List<Assembly> _assemblies = new List<Assembly>();
 
-  public DefaultInfrastructureModule(bool isDevelopment, Assembly? callingAssembly = null)
+  public DefaultInfrastructureModule(IConfiguration configuration) : base(configuration)
   {
-    _isDevelopment = isDevelopment;
-    var coreAssembly =
-      Assembly.GetAssembly(typeof(Project)); // TODO: Replace "Project" with any type from your Core project
-    var infrastructureAssembly = Assembly.GetAssembly(typeof(StartupSetup));
-    if (coreAssembly != null)
-    {
-      _assemblies.Add(coreAssembly);
-    }
-
-    if (infrastructureAssembly != null)
-    {
-      _assemblies.Add(infrastructureAssembly);
-    }
-
-    if (callingAssembly != null)
-    {
-      _assemblies.Add(callingAssembly);
-    }
   }
-
-  protected override void Load(ContainerBuilder builder)
-  {
-    if (_isDevelopment)
-    {
-      RegisterDevelopmentOnlyDependencies(builder);
-    }
-    else
-    {
-      RegisterProductionOnlyDependencies(builder);
-    }
-
-    RegisterCommonDependencies(builder);
-  }
-
-  private void RegisterCommonDependencies(ContainerBuilder builder)
+  
+  protected override void RegisterCommonDependencies(ContainerBuilder builder)
   {
     builder.RegisterGeneric(typeof(EfRepository<>))
       .As(typeof(IRepository<>))
       .As(typeof(IReadRepository<>))
       .InstancePerLifetimeScope();
-
+    
     builder
       .RegisterType<Mediator>()
       .As<IMediator>()
@@ -68,6 +37,21 @@ public class DefaultInfrastructureModule : Module
       .RegisterType<DomainEventDispatcher>()
       .As<IDomainEventDispatcher>()
       .InstancePerLifetimeScope();
+    
+    builder.Register(c =>
+      {
+        string? connectionString = Configuration.GetConnectionString("SqliteConnection");  //Configuration.GetConnectionString("DefaultConnection");
+        var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+        optionsBuilder.UseSqlite(connectionString);
+        return new AppDbContext(optionsBuilder.Options,c.Resolve<IDomainEventDispatcher>());
+      })
+      .As<AppDbContext>()
+      .InstancePerLifetimeScope();
+    
+    builder
+      .RegisterType<SeedData>()
+      .As<IStartable>()
+      .SingleInstance();
 
     //builder.Register<ServiceFactory>(context =>
     //{
@@ -76,31 +60,31 @@ public class DefaultInfrastructureModule : Module
     //  return t => c.Resolve(t);
     //});
 
-    var mediatrOpenTypes = new[]
-    {
-      typeof(IRequestHandler<,>), 
-      typeof(IRequestExceptionHandler<,,>), 
-      typeof(IRequestExceptionAction<,>),
-      typeof(INotificationHandler<>),
-    };
-
-    foreach (var mediatrOpenType in mediatrOpenTypes)
-    {
-      builder
-        .RegisterAssemblyTypes(_assemblies.ToArray())
-        .AsClosedTypesOf(mediatrOpenType)
-        .AsImplementedInterfaces();
-    }
+    // var mediatrOpenTypes = new[]
+    // {
+    //   typeof(IRequestHandler<,>), 
+    //   typeof(IRequestExceptionHandler<,,>), 
+    //   typeof(IRequestExceptionAction<,>),
+    //   typeof(INotificationHandler<>),
+    // };
+    //
+    // foreach (var mediatrOpenType in mediatrOpenTypes)
+    // {
+    //   builder
+    //     .RegisterAssemblyTypes(_assemblies.ToArray())
+    //     .AsClosedTypesOf(mediatrOpenType)
+    //     .AsImplementedInterfaces();
+    // }
   }
 
-  private void RegisterDevelopmentOnlyDependencies(ContainerBuilder builder)
+  protected override void RegisterDevelopmentOnlyDependencies(ContainerBuilder builder)
   {
     // NOTE: Add any development only services here
     builder.RegisterType<FakeEmailSender>().As<IEmailSender>()
       .InstancePerLifetimeScope();
   }
 
-  private void RegisterProductionOnlyDependencies(ContainerBuilder builder)
+  protected override void RegisterProductionOnlyDependencies(ContainerBuilder builder)
   {
     // NOTE: Add any production only services here
     builder.RegisterType<SmtpEmailSender>().As<IEmailSender>()

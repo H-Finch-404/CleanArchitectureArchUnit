@@ -26,7 +26,5 @@ public class CoreLayerDependencyTests : ArchitectureTestBase
 
     coreLayerShouldNotDependOnWebLayerRule.Check(Architecture);
   }
-  
-
 
 }

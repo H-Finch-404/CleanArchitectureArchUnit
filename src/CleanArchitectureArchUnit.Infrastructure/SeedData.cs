@@ -1,4 +1,5 @@
-﻿using CleanArchitectureArchUnit.Core.ContributorAggregate;
+﻿using Autofac;
+using CleanArchitectureArchUnit.Core.ContributorAggregate;
 using CleanArchitectureArchUnit.Core.ProjectAggregate;
 using CleanArchitectureArchUnit.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -6,8 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitectureArchUnit.Infrastructure;
 
-public static class SeedData
+public class SeedData : IStartable
 {
+  private readonly AppDbContext _appDbContext;
   public static readonly Contributor Contributor1 = new ("Ardalis");
   public static readonly Contributor Contributor2 = new ("Snowfrog");
   public static readonly Project TestProject1 = new Project("Test Project", PriorityStatus.Backlog);
@@ -27,22 +29,11 @@ public static class SeedData
     Description = "Make sure all the tests run and review what they are doing."
   };
 
-  public static void Initialize(IServiceProvider serviceProvider)
+  public SeedData(AppDbContext appDbContext)
   {
-    using (var dbContext = new AppDbContext(
-        serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>(), null))
-    {
-      // Look for any TODO items.
-      if (dbContext.ToDoItems.Any())
-      {
-        return;   // DB has been seeded
-      }
-
-      PopulateTestData(dbContext);
-
-
-    }
+    _appDbContext = appDbContext;
   }
+  
   public static void PopulateTestData(AppDbContext dbContext)
   {
     foreach (var item in dbContext.Projects)
@@ -74,5 +65,15 @@ public static class SeedData
     dbContext.Projects.Add(TestProject1);
 
     dbContext.SaveChanges();
+  }
+
+  public void Start()
+  {
+    if (_appDbContext.ToDoItems.Any())
+    {
+      return;   // DB has been seeded
+    }
+
+    PopulateTestData(_appDbContext);
   }
 }

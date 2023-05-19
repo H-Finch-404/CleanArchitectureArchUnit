@@ -5,7 +5,7 @@ namespace CleanArchitectureArchUnit.ArchitectureTests.LayerDependencyTests;
 
 using static ArchRuleDefinition;
 [TestFixture]
-public class InfrastructureLayerTests : ArchitectureTestBase
+public class InfrastructureLayerDependencyTests : ArchitectureTestBase
 {
   
   [Test]
