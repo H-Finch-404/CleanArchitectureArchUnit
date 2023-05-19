@@ -12,14 +12,12 @@ public class DefaultCoreModule : ProjectModule
   {
   }
 
-  protected override void Load(ContainerBuilder builder)
+  protected override void RegisterCommonDependencies(ContainerBuilder builder)
   {
     builder.RegisterType<ToDoItemSearchService>()
-        .As<IToDoItemSearchService>().InstancePerLifetimeScope();
+      .As<IToDoItemSearchService>().InstancePerLifetimeScope();
 
     builder.RegisterType<DeleteContributorService>()
-        .As<IDeleteContributorService>().InstancePerLifetimeScope();
+      .As<IDeleteContributorService>().InstancePerLifetimeScope();
   }
-
-  
 }
