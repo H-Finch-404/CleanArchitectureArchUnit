@@ -2,8 +2,9 @@
 using CleanArchitectureArchUnit.Core.ProjectAggregate;
 using CleanArchitectureArchUnit.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitectureArchUnit.Web;
+namespace CleanArchitectureArchUnit.Infrastructure;
 
 public static class SeedData
 {

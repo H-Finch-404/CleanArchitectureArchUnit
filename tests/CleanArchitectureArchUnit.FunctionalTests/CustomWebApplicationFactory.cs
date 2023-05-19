@@ -1,4 +1,5 @@
-﻿using CleanArchitectureArchUnit.Infrastructure.Data;
+﻿using CleanArchitectureArchUnit.Infrastructure;
+using CleanArchitectureArchUnit.Infrastructure.Data;
 using CleanArchitectureArchUnit.Web;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;

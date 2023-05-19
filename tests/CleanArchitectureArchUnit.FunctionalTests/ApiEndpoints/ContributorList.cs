@@ -1,4 +1,5 @@
 ﻿using Ardalis.HttpClientTestExtensions;
+using CleanArchitectureArchUnit.Infrastructure;
 using CleanArchitectureArchUnit.Web;
 using CleanArchitectureArchUnit.Web.Endpoints.ContributorEndpoints;
 using Xunit;
