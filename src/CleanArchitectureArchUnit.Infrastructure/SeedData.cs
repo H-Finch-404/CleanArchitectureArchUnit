@@ -69,6 +69,7 @@ public class SeedData : IStartable
 
   public void Start()
   {
+    _appDbContext.Database.EnsureCreated();
     if (_appDbContext.ToDoItems.Any())
     {
       return;   // DB has been seeded
