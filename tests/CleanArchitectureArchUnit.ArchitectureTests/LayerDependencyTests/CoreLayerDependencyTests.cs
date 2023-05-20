@@ -27,13 +27,4 @@ public class CoreLayerDependencyTests : ArchitectureTestBase
     coreLayerShouldNotDependOnWebLayerRule.Check(Architecture);
   }
   
-  [Test]
-  public void CoreLayer_ShouldNot_DependOn_BootstrapperLayer()
-  {
-    IArchRule coreLayerShouldNotDependOnWebLayerRule =
-      Types().That().Are(CoreLayer).Should().NotDependOnAnyTypesThat().Are(WebLayer);
-
-    coreLayerShouldNotDependOnWebLayerRule.Check(Architecture);
-  }
-
 }
