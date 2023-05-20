@@ -37,6 +37,7 @@ public class CustomWebApplicationFactory<TProgram> : WebApplicationFactory<TProg
           .GetRequiredService<ILogger<CustomWebApplicationFactory<TProgram>>>();
 
       // Ensure the database is created.
+      db.Database.EnsureDeleted();
       db.Database.EnsureCreated();
 
       try
