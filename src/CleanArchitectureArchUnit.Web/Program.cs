@@ -1,7 +1,8 @@
 ﻿using Ardalis.ListStartupServices;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using CleanArchitectureArchUnit.Bootstrapper;
+using CleanArchitectureArchUnit.Core;
+using CleanArchitectureArchUnit.Infrastructure;
 using FastEndpoints;
 using FastEndpoints.Swagger.Swashbuckle;
 using FastEndpoints.ApiExplorer;
@@ -21,7 +22,7 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 });
 
 builder.Services.AddControllers();
-builder.Services.AddRazorPages();
+//builder.Services.AddRazorPages();
 builder.Services.AddFastEndpoints();
 builder.Services.AddFastEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -40,10 +41,10 @@ builder.Services.Configure<ServiceConfig>(config =>
   config.Path = "/listservices";
 });
 
-
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
-  ModuleDependencyConfigurator.Configure(containerBuilder,builder.Configuration);
+  containerBuilder.RegisterModule(new DefaultCoreModule(builder.Configuration));
+  containerBuilder.RegisterModule(new DefaultInfrastructureModule(builder.Configuration));
 });
 
 //builder.Logging.AddAzureWebAppDiagnostics(); add this if deploying to Azure
@@ -74,10 +75,12 @@ app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1"));
 
 app.MapDefaultControllerRoute();
-app.MapRazorPages();
+//app.MapRazorPages();
 
 
 app.Run();
+
+
 
 // Make the implicit Program.cs class public, so integration tests can reference the correct assembly for host building
 public partial class Program

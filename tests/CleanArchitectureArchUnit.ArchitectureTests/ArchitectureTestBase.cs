@@ -13,7 +13,7 @@ public abstract class ArchitectureTestBase
   private static readonly Assembly _webLayerAssembly = typeof(Program).Assembly;
   private static readonly Assembly _infrastructureLayerAssembly = typeof(DefaultInfrastructureModule).Assembly;
   private static readonly Assembly _coreLayerAssembly = typeof(DefaultCoreModule).Assembly;
-  
+
   // Initialize array of specified assemblies for reusablity
   protected static readonly Assembly[] Assemblies = { _webLayerAssembly, _infrastructureLayerAssembly, _coreLayerAssembly };
   
