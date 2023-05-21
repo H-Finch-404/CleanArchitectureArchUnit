@@ -44,6 +44,7 @@ public abstract class ArchitectureTestBase
   }
   protected void Check(IArchRule rule)
   {
+    // Check whether the architecture conforms to the given rule
     rule.Check(Architecture);
   }
 }
