@@ -15,7 +15,7 @@ public class CoreLayerDependencyTests : ArchitectureTestBase
     IArchRule coreLayerShouldNotDependOnInfrastructureLayerRule =
       Types().That().Are(CoreLayer).Should().NotDependOnAnyTypesThat().Are(InfrastructureLayer);
 
-    coreLayerShouldNotDependOnInfrastructureLayerRule.Check(Architecture);
+    Check(coreLayerShouldNotDependOnInfrastructureLayerRule);
   }
 
   [Test]
@@ -24,7 +24,7 @@ public class CoreLayerDependencyTests : ArchitectureTestBase
     IArchRule coreLayerShouldNotDependOnWebLayerRule =
       Types().That().Are(CoreLayer).Should().NotDependOnAnyTypesThat().Are(WebLayer);
 
-    coreLayerShouldNotDependOnWebLayerRule.Check(Architecture);
+    Check(coreLayerShouldNotDependOnWebLayerRule);
   }
   
 }

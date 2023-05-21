@@ -14,6 +14,6 @@ public class InfrastructureLayerDependencyTests : ArchitectureTestBase
     IArchRule infrastructureLayerShouldNotDependOnWebLayerRule =
       Types().That().Are(InfrastructureLayer).Should().NotDependOnAnyTypesThat().Are(WebLayer);
 
-    infrastructureLayerShouldNotDependOnWebLayerRule.Check(Architecture);
+    Check(infrastructureLayerShouldNotDependOnWebLayerRule);
   }
 }
