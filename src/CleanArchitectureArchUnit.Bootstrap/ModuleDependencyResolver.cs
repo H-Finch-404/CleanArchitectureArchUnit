@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using CleanArchitectureArchUnit.Core;
-// using CleanArchitectureArchUnit.Infrastructure;
+using CleanArchitectureArchUnit.Infrastructure;
 using Microsoft.Extensions.Configuration;
 
 namespace CleanArchitectureArchUnit.Bootstrap;
