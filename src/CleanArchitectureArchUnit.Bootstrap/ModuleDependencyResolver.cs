@@ -10,6 +10,6 @@ public static class ModuleDependencyResolver
   public static void RegisterModules(ContainerBuilder containerBuilder, IConfiguration configuration)
   {
     containerBuilder.RegisterModule(new DefaultCoreModule(configuration));
-    // containerBuilder.RegisterModule(new DefaultInfrastructureModule(configuration));
+    containerBuilder.RegisterModule(new DefaultInfrastructureModule(configuration));
   }
 }
