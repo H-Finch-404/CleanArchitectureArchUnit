@@ -1,5 +1,4 @@
 ﻿using ArchUnitNET.Fluent;
-using ArchUnitNET.NUnit;
 
 namespace CleanArchitectureArchUnit.ArchitectureTests.LayerDependencyTests;
 
@@ -8,7 +7,6 @@ using static ArchRuleDefinition;
 [TestFixture]
 public class CoreLayerDependencyTests : ArchitectureTestBase
 {
-  
   [Test]
   public void CoreLayer_ShouldNot_DependOn_InfrastructureLayer()
   {
@@ -26,5 +24,4 @@ public class CoreLayerDependencyTests : ArchitectureTestBase
 
     Check(coreLayerShouldNotDependOnWebLayerRule);
   }
-  
 }
