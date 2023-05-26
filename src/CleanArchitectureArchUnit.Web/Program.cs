@@ -1,8 +1,7 @@
 ﻿using Ardalis.ListStartupServices;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using CleanArchitectureArchUnit.Core;
-using CleanArchitectureArchUnit.Infrastructure;
+using CleanArchitectureArchUnit.Bootstrap;
 using FastEndpoints;
 using FastEndpoints.Swagger.Swashbuckle;
 using FastEndpoints.ApiExplorer;
@@ -42,9 +41,8 @@ builder.Services.Configure<ServiceConfig>(config =>
 });
 
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
-{
-  containerBuilder.RegisterModule(new DefaultCoreModule(builder.Configuration));
-  containerBuilder.RegisterModule(new DefaultInfrastructureModule(builder.Configuration));
+{ 
+  ModuleDependencyResolver.RegisterModules(containerBuilder,builder.Configuration);
 });
 
 //builder.Logging.AddAzureWebAppDiagnostics(); add this if deploying to Azure

@@ -25,6 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\src\CleanArchitectureArchUnit.Infrastructure\CleanArchitectureArchUnit.Infrastructure.csproj" />
         <ProjectReference Include="..\..\src\CleanArchitectureArchUnit.Web\CleanArchitectureArchUnit.Web.csproj" />
         <ProjectReference Include="..\CleanArchitectureArchUnit.UnitTests\CleanArchitectureArchUnit.UnitTests.csproj" />
     </ItemGroup>
