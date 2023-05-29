@@ -1,9 +1,9 @@
 ﻿using Ardalis.GuardClauses;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Events;
 using CleanArchitectureArchUnit.Core.Interfaces;
-using CleanArchitectureArchUnit.Core.ProjectAggregate.Events;
 using MediatR;
 
-namespace CleanArchitectureArchUnit.Core.ProjectAggregate.Handlers;
+namespace CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Handlers;
 
 public class ItemCompletedEmailNotificationHandler : INotificationHandler<ToDoItemCompletedEvent>
 {

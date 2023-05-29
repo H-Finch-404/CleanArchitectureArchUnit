@@ -1,5 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
-using CleanArchitectureArchUnit.Core.ProjectAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;

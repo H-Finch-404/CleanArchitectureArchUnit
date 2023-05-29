@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
-using CleanArchitectureArchUnit.Core.ContributorAggregate;
-using CleanArchitectureArchUnit.Core.ProjectAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
 using CleanArchitectureArchUnit.SharedKernel;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;

@@ -1,4 +1,4 @@
-﻿using CleanArchitectureArchUnit.Core.ProjectAggregate;
+﻿using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
 using Xunit;
 
 namespace CleanArchitectureArchUnit.UnitTests.Core.ProjectAggregate;

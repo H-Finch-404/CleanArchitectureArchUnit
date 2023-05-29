@@ -1,8 +1,8 @@
 ﻿using Ardalis.GuardClauses;
-using CleanArchitectureArchUnit.Core.ProjectAggregate.Events;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Events;
 using CleanArchitectureArchUnit.SharedKernel;
 
-namespace CleanArchitectureArchUnit.Core.ProjectAggregate;
+namespace CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
 
 public class ToDoItem : EntityBase
 {

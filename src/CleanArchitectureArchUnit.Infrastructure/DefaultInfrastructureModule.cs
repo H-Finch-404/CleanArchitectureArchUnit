@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using Autofac;
 using CleanArchitectureArchUnit.Core.Interfaces;
-using CleanArchitectureArchUnit.Core.ProjectAggregate;
 using CleanArchitectureArchUnit.Infrastructure.Data;
 using CleanArchitectureArchUnit.SharedKernel;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;

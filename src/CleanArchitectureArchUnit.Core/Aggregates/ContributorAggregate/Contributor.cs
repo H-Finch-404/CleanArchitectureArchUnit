@@ -2,7 +2,7 @@
 using CleanArchitectureArchUnit.SharedKernel;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 
-namespace CleanArchitectureArchUnit.Core.ContributorAggregate;
+namespace CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
 
 public class Contributor : EntityBase, IAggregateRoot
 {

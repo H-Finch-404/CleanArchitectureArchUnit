@@ -4,6 +4,7 @@ using ArchUnitNET.Loader;
 using ArchUnitNET.NUnit;
 using CleanArchitectureArchUnit.Core;
 using CleanArchitectureArchUnit.Infrastructure;
+using CleanArchitectureArchUnit.SharedKernel;
 using Assembly = System.Reflection.Assembly;
 using static ArchUnitNET.Fluent.ArchRuleDefinition;
 
@@ -17,11 +18,12 @@ public abstract class ArchitectureTestBase
   private static readonly Assembly _webLayerAssembly = typeof(Program).Assembly;
   private static readonly Assembly _infrastructureLayerAssembly = typeof(DefaultInfrastructureModule).Assembly;
   private static readonly Assembly _coreLayerAssembly = typeof(DefaultCoreModule).Assembly;
+  private static readonly Assembly _sharedKernelAssembly = typeof(ProjectModule).Assembly;
 
   // Initialize array of specified assemblies for reusablity
   protected static readonly Assembly[] Assemblies =
   {
-    _webLayerAssembly, _infrastructureLayerAssembly, _coreLayerAssembly
+    _webLayerAssembly, _infrastructureLayerAssembly, _coreLayerAssembly,_sharedKernelAssembly
   };
 
   // Declare reusable layer objects
@@ -39,8 +41,10 @@ public abstract class ArchitectureTestBase
   [OneTimeSetUp]
   public void LoadArchitecture()
   {
+    Console.WriteLine(DateTime.Now);
     // Initialize the architecture using specified assemblies
     Architecture = new ArchLoader().LoadAssemblies(Assemblies).Build();
+    Console.WriteLine(DateTime.Now);
   }
   protected void Check(IArchRule rule)
   {

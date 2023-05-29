@@ -1,7 +1,7 @@
 ﻿using Ardalis.Result;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Specifications;
 using CleanArchitectureArchUnit.Core.Interfaces;
-using CleanArchitectureArchUnit.Core.ProjectAggregate;
-using CleanArchitectureArchUnit.Core.ProjectAggregate.Specifications;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 
 namespace CleanArchitectureArchUnit.Core.Services;

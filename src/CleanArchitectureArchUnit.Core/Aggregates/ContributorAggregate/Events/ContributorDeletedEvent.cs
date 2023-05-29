@@ -1,6 +1,6 @@
 ﻿using CleanArchitectureArchUnit.SharedKernel;
 
-namespace CleanArchitectureArchUnit.Core.ContributorAggregate.Events;
+namespace CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate.Events;
 
 public class ContributorDeletedEvent : DomainEventBase
 {

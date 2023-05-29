@@ -1,7 +1,7 @@
 ﻿using Ardalis.Specification;
-using CleanArchitectureArchUnit.Core.ContributorAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
 
-namespace CleanArchitectureArchUnit.Core.ProjectAggregate.Specifications;
+namespace CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Specifications;
 
 public class ContributorByIdSpec : Specification<Contributor>, ISingleResultSpecification
 {

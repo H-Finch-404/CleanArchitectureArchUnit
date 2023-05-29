@@ -1,4 +1,4 @@
-﻿using CleanArchitectureArchUnit.Core.ProjectAggregate;
+﻿using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
 using CleanArchitectureArchUnit.Infrastructure.Data;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 using Microsoft.EntityFrameworkCore;

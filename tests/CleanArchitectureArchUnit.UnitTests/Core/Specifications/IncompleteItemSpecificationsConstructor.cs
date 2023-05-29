@@ -1,5 +1,5 @@
-﻿using CleanArchitectureArchUnit.Core.ProjectAggregate;
-using CleanArchitectureArchUnit.Core.ProjectAggregate.Specifications;
+﻿using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Specifications;
 using Xunit;
 
 namespace CleanArchitectureArchUnit.UnitTests.Core.Specifications;

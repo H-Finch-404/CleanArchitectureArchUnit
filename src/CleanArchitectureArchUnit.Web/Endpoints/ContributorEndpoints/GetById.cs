@@ -1,5 +1,5 @@
-﻿using CleanArchitectureArchUnit.Core.ContributorAggregate;
-using CleanArchitectureArchUnit.Core.ProjectAggregate.Specifications;
+﻿using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Specifications;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 using FastEndpoints;
 

@@ -1,4 +1,4 @@
-﻿using CleanArchitectureArchUnit.Core.ContributorAggregate;
+﻿using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
 using CleanArchitectureArchUnit.Core.Services;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 using MediatR;

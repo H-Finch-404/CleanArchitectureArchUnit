@@ -1,6 +1,6 @@
 ﻿using CleanArchitectureArchUnit.SharedKernel;
 
-namespace CleanArchitectureArchUnit.Core.ProjectAggregate.Events;
+namespace CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Events;
 
 public class ToDoItemCompletedEvent : DomainEventBase
 {

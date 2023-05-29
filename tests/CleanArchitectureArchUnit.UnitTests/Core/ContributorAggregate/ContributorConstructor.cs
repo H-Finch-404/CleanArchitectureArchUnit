@@ -1,4 +1,4 @@
-﻿using CleanArchitectureArchUnit.Core.ContributorAggregate;
+﻿using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
 using Xunit;
 
 namespace CleanArchitectureArchUnit.UnitTests.Core.ContributorAggregate;

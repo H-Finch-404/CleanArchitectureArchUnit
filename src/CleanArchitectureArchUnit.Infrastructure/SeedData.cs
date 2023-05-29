@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using CleanArchitectureArchUnit.Core.ContributorAggregate;
-using CleanArchitectureArchUnit.Core.ProjectAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
 using CleanArchitectureArchUnit.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

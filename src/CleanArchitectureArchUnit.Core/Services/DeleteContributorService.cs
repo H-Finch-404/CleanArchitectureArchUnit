@@ -1,6 +1,6 @@
 using Ardalis.Result;
-using CleanArchitectureArchUnit.Core.ContributorAggregate;
-using CleanArchitectureArchUnit.Core.ContributorAggregate.Events;
+using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate.Events;
 using CleanArchitectureArchUnit.Core.Interfaces;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 using MediatR;

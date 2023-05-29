@@ -31,6 +31,7 @@
     <ItemGroup>
       <ProjectReference Include="..\CleanArchitectureArchUnit.Bootstrap\CleanArchitectureArchUnit.Bootstrap.csproj" />
       <ProjectReference Include="..\CleanArchitectureArchUnit.Core\CleanArchitectureArchUnit.Core.csproj" />
+      <ProjectReference Include="..\CleanArchitectureArchUnit.Infrastructure\CleanArchitectureArchUnit.Infrastructure.csproj" />
       <ProjectReference Include="..\CleanArchitectureArchUnit.SharedKernel\CleanArchitectureArchUnit.SharedKernel.csproj" />
     </ItemGroup>
 </Project>

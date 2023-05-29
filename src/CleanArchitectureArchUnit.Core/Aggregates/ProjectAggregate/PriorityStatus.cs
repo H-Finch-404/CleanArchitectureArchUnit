@@ -1,6 +1,6 @@
 ﻿using Ardalis.SmartEnum;
 
-namespace CleanArchitectureArchUnit.Core.ProjectAggregate;
+namespace CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
 
 public class PriorityStatus : SmartEnum<PriorityStatus>
 {

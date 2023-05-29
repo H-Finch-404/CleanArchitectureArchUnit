@@ -1,4 +1,5 @@
-﻿using CleanArchitectureArchUnit.Core.ContributorAggregate;
+﻿using CleanArchitectureArchUnit.Core;
+using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
 using FastEndpoints;
 
@@ -12,7 +13,7 @@ public class Create : Endpoint<CreateContributorRequest, CreateContributorRespon
   {
     _repository = repository;
   }
-
+  
   public override void Configure()
   {
     Post(CreateContributorRequest.Route);

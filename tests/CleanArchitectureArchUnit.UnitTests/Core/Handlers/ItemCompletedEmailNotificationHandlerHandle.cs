@@ -1,7 +1,7 @@
-﻿using CleanArchitectureArchUnit.Core.Interfaces;
-using CleanArchitectureArchUnit.Core.ProjectAggregate;
-using CleanArchitectureArchUnit.Core.ProjectAggregate.Events;
-using CleanArchitectureArchUnit.Core.ProjectAggregate.Handlers;
+﻿using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Events;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Handlers;
+using CleanArchitectureArchUnit.Core.Interfaces;
 using Moq;
 using Xunit;
 

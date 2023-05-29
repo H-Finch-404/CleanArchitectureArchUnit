@@ -1,9 +1,9 @@
-﻿using CleanArchitectureArchUnit.Core.ContributorAggregate.Events;
+﻿using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate.Events;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Specifications;
 using CleanArchitectureArchUnit.SharedKernel.Interfaces;
-using CleanArchitectureArchUnit.Core.ProjectAggregate.Specifications;
 using MediatR;
 
-namespace CleanArchitectureArchUnit.Core.ProjectAggregate.Handlers;
+namespace CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate.Handlers;
 
 public class ContributorDeletedHandler : INotificationHandler<ContributorDeletedEvent>
 {

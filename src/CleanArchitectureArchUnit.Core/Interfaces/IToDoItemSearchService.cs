@@ -1,5 +1,5 @@
 ﻿using Ardalis.Result;
-using CleanArchitectureArchUnit.Core.ProjectAggregate;
+using CleanArchitectureArchUnit.Core.Aggregates.ProjectAggregate;
 
 namespace CleanArchitectureArchUnit.Core.Interfaces;
 
