@@ -41,10 +41,8 @@ public abstract class ArchitectureTestBase
   [OneTimeSetUp]
   public void LoadArchitecture()
   {
-    Console.WriteLine(DateTime.Now);
     // Initialize the architecture using specified assemblies
     Architecture = new ArchLoader().LoadAssemblies(Assemblies).Build();
-    Console.WriteLine(DateTime.Now);
   }
   protected void Check(IArchRule rule)
   {
