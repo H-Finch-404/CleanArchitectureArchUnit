@@ -1,31 +1,12 @@
-﻿// using CleanArchitectureArchUnit.Core.Aggregates.ContributorAggregate;
-// using CleanArchitectureArchUnit.Core.Services;
-// using CleanArchitectureArchUnit.SharedKernel.Interfaces;
-// using MediatR;
+﻿// using CleanArchitectureArchUnit.Core.Services;
 //
-// namespace CleanArchitectureArchUnit.Web;
-//
-//
-// public class ClassThatDependsOnForbiddenCoreClass : DeleteContributorService
-// {
-//   public ClassThatDependsOnForbiddenCoreClass(IRepository<Contributor> repository, IMediator mediator) : base(repository, mediator)
-//   {
-//   }
-// }
-//
-// public class ClassThat
+// // This class depends on a specific implementation of IDeleteContributorService which violates Dependency Inversion
+// public class ClassThatDependsOnForbiddenCoreClass
 // {
 //   private readonly DeleteContributorService _deleteContributorService;
 //
-//   public ClassThat(DeleteContributorService deleteContributorService)
+//   public ClassThatDependsOnForbiddenCoreClass(DeleteContributorService deleteContributorService)
 //   {
 //     _deleteContributorService = deleteContributorService;
 //   }
 // }
-//
-// // public class Test : IConfiguration
-// // {
-// //   public ClassThatDependsOnForbiddenCoreClass(IConfiguration configuration) : base(configuration)
-// //   {
-// //   }
-// // }
