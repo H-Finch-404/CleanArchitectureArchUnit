@@ -7,9 +7,6 @@ namespace CleanArchitectureArchUnit.Core;
 // AggregateRoots_Should_Reside_InCoreLayer_And_AggregatesNamespace
 
 public class UnleashedEntityClass :  EntityBase, IAggregateRoot
-{ 
-  public UnleashedEntityClass()
-  {
-   
-  }
+{
+  
 }
