@@ -15,10 +15,10 @@ public abstract class ArchitectureTestBase
 #pragma warning restore CA1050
 {
   // Declare layer assemblies
-  private static readonly Assembly _webLayerAssembly = typeof(Program).Assembly;
-  private static readonly Assembly _infrastructureLayerAssembly = typeof(DefaultInfrastructureModule).Assembly;
-  private static readonly Assembly _coreLayerAssembly = typeof(DefaultCoreModule).Assembly;
-  private static readonly Assembly _sharedKernelAssembly = typeof(ProjectModule).Assembly;
+  protected static readonly Assembly _webLayerAssembly = typeof(Program).Assembly;
+  protected static readonly Assembly _infrastructureLayerAssembly = typeof(DefaultInfrastructureModule).Assembly;
+  protected static readonly Assembly _coreLayerAssembly = typeof(DefaultCoreModule).Assembly;
+  protected static readonly Assembly _sharedKernelAssembly = typeof(ProjectModule).Assembly;
 
   // Initialize array of specified assemblies for reusablity
   protected static readonly Assembly[] Assemblies =
