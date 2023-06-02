@@ -6,3 +6,13 @@ namespace CleanArchitectureArchUnit.Core.Aggregates.UnleashedEntityClassAggregat
 public class UnleashedEntityClass : EntityBase, IAggregateRoot
 {
 }
+
+public class SuperUnleashedEntityClass : UnleashedEntityClass
+{
+  
+}
+
+public class NamingRulesAreImportantEntityClass : UnleashedEntityClass
+{
+  
+}
