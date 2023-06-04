@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitectureArchUnit.Infrastructure.Data;
 
-public class AppDbContext : DbContext
+internal class AppDbContext : DbContext
 {
   private readonly IDomainEventDispatcher? _dispatcher;
 

@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CleanArchitectureArchUnit.Infrastructure;
 
-public class FakeEmailSender : IEmailSender
+internal class FakeEmailSender : IEmailSender
 {
   private readonly ILogger<FakeEmailSender> _logger;
 

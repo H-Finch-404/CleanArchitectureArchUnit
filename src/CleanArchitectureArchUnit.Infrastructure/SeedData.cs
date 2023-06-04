@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitectureArchUnit.Infrastructure;
 
-public class SeedData : IStartable
+internal class SeedData : IStartable
 {
   private readonly AppDbContext _appDbContext;
   public static readonly Contributor Contributor1 = new ("Ardalis");

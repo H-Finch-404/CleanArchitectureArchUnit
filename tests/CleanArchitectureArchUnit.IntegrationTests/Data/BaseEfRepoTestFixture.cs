@@ -9,7 +9,7 @@ namespace CleanArchitectureArchUnit.IntegrationTests.Data;
 
 public abstract class BaseEfRepoTestFixture
 {
-  protected AppDbContext _dbContext;
+  internal AppDbContext _dbContext;
 
   protected BaseEfRepoTestFixture()
   {
@@ -19,7 +19,7 @@ public abstract class BaseEfRepoTestFixture
     _dbContext = new AppDbContext(options, mockEventDispatcher.Object);
   }
 
-  protected static DbContextOptions<AppDbContext> CreateNewContextOptions()
+  private static DbContextOptions<AppDbContext> CreateNewContextOptions()
   {
     // Create a fresh service provider, and therefore a fresh
     // InMemory database instance.
@@ -36,7 +36,7 @@ public abstract class BaseEfRepoTestFixture
     return builder.Options;
   }
 
-  protected EfRepository<Project> GetRepository()
+  internal EfRepository<Project> GetRepository()
   {
     return new EfRepository<Project>(_dbContext);
   }

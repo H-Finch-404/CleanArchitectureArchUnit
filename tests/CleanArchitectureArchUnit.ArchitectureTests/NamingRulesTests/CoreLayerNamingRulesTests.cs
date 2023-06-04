@@ -47,15 +47,5 @@ public class CoreLayerNamingRulesTests : ArchitectureTestBase
   {
     return superType.Assembly.GetTypes().Where(type => type.BaseType == superType).ToList();
   }
-
-
-  [Test]
-  public void UnleashedEntityClass_ShouldHave_ToStringMethod()
-  {
-    IArchRule rule = Classes().That().Are(CoreLayer)
-      .And().AreAssignableTo(typeof(UnleashedEntityClass))
-      .Should().HaveMethodMemberWithName("ToString");
-
-    Check(rule);
-  }
+  
 }

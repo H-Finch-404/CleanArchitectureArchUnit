@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CleanArchitectureArchUnit.Infrastructure;
 
-public class SmtpEmailSender : IEmailSender
+internal class SmtpEmailSender : IEmailSender
 {
   private readonly ILogger<SmtpEmailSender> _logger;
 

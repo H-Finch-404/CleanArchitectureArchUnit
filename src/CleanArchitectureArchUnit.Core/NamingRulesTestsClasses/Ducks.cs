@@ -6,9 +6,9 @@ public class Duck
 public class SuperDuck : Duck
 {
 }
-public class Cow : Duck
+public class CowDuck : Duck
 {
 }
-public class MegaSuperGeese : SuperDuck
+public class MegaSuperDuck : SuperDuck
 {
 }

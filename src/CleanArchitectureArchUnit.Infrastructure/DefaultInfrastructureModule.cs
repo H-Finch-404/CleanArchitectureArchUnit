@@ -12,7 +12,7 @@ using Module = Autofac.Module;
 
 namespace CleanArchitectureArchUnit.Infrastructure;
 
-public class DefaultInfrastructureModule : ProjectModule
+internal class DefaultInfrastructureModule : ProjectModule
 {
   private readonly List<Assembly> _assemblies = new List<Assembly>();
 

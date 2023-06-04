@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CleanArchitectureArchUnit.Infrastructure.Data.Config;
 
-public class ToDoConfiguration : IEntityTypeConfiguration<ToDoItem>
+internal class ToDoConfiguration : IEntityTypeConfiguration<ToDoItem>
 {
   public void Configure(EntityTypeBuilder<ToDoItem> builder)
   {
