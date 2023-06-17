@@ -1,8 +1,8 @@
-﻿using CleanArchitectureArchUnit.SharedKernel;
-
-namespace CleanArchitectureArchUnit.Core.NamingRulesTestsClasses;
-
-public class ItemAdded : DomainEventBase
-{
-  
-}
+﻿// using CleanArchitectureArchUnit.SharedKernel;
+//
+// namespace CleanArchitectureArchUnit.Core.NamingRulesTestsClasses;
+//
+// public class ItemAdded : DomainEventBase
+// {
+//   
+// }

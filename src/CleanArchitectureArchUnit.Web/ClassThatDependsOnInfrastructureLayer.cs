@@ -11,12 +11,3 @@
 //   }
 // }
 
-
-// using CleanArchitectureArchUnit.Core;
-//
-// class Xd : DefaultCoreModule
-// {
-//   public Xd(IConfiguration configuration) : base(configuration)
-//   {
-//   }
-// }
