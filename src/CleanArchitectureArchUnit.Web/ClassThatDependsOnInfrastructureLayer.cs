@@ -4,10 +4,10 @@
 // namespace CleanArchitectureArchUnit.Web;
 //
 // // This class violates the dependency rule between web and infrastructure layers
-// public class ClassThatDependsOnInfrastructureLayer : EfRepository<Contributor>
+// internal class ClassThatDependsOnInfrastructureLayer : EfRepository<Contributor>
 // {
 //   public ClassThatDependsOnInfrastructureLayer(AppDbContext dbContext) : base(dbContext)
 //   {
 //   }
 // }
-
+//
